@@ -16,6 +16,10 @@ def log(a):
         result += 1
     return result
 
+#author -@praneeth
+def multiply(a,b):
+    return a*b
+
 def main():
     print(" Calculator ")
     try:
@@ -25,6 +29,7 @@ def main():
         print(f"The result of {num1} + {num2} is: {result}")
         print(f"The result of {num1} - {num2} is: {subtract(num1, num2)}")
         print(f"The result of log({num1}) is: {log(num1)}")
+        print(f"The result of {num1} * {num2} is: {multiply(num1, num2)}")
     except ValueError:
         print("Invalid input. Please enter numeric values.")
 
