@@ -18,7 +18,7 @@ def log(a):
 
 #author -@praneeth
 def multiply(a,b):
-    return a*b
+    return (a*b)
 
 def main():
     print(" Calculator ")
