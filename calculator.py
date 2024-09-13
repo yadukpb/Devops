@@ -6,6 +6,16 @@ def add(a, b):
 def subtract(a, b):
     return a-b
 
+#author -@Maurya
+def log(a):
+    if a <= 0:
+        raise ValueError("Logarithm is not defined for non-positive numbers.")
+    result = 0
+    while a > 1:
+        a /= 2
+        result += 1
+    return result
+
 def main():
     print(" Calculator ")
     try:
@@ -14,6 +24,7 @@ def main():
         result = add(num1, num2)
         print(f"The result of {num1} + {num2} is: {result}")
         print(f"The result of {num1} - {num2} is: {subtract(num1, num2)}")
+        print(f"The result of log({num1}) is: {log(num1)}")
     except ValueError:
         print("Invalid input. Please enter numeric values.")
 
