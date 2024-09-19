@@ -2,9 +2,13 @@
 def add(a, b):
     return a + b
 
+#author -@KaranRaaj
+def sub(a, b):
+    return a - b
+
 #author -@Lohithvarma
 def subtract(a, b):
-    return a-b
+    return a - b
 
 #author -@Maurya
 def log(a):
@@ -17,23 +21,27 @@ def log(a):
     return result
 
 #author -@praneeth
-def multiply(a,b):
-    return (a*b)
+def multiply(a, b):
+    return a * b
 
 def main():
     print(" Calculator ")
     try:
         num1 = float(input("Enter the first number: "))
         num2 = float(input("Enter the second number: "))
-        result = add(num1, num2)
-        print(f"The result of {num1} + {num2} is: {result}")
-        print(f"The result of {num1} - {num2} is: {subtract(num1, num2)}")
+        
+        print(f"The result of adding {num1} + {num2} is: {add(num1, num2)}")
+        print(f"The result of subtracting {num1} - {num2} is: {sub(num1, num2)}")  # Using KaranRaaj's function
+        print(f"The result of subtracting {num1} - {num2} is: {subtract(num1, num2)}")  # Using Lohithvarma's function
         print(f"The result of log({num1}) is: {log(num1)}")
-        print(f"The result of {num1} * {num2} is: {multiply(num1, num2)}")
-    except ValueError:
-        print("Invalid input. Please enter numeric values.")
+        print(f"The result of multiplying {num1} * {num2} is: {multiply(num1, num2)}")
+    
+    except ValueError as e:
+        print(f"Error: {e}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
     main()
 
-print("hello World")
+print("Hello World")
