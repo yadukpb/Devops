@@ -12,6 +12,16 @@ public:
     void push(int value) {
         elements.push_back(value);
     }
+
+// @pratik - Added a function that returns the top of a stack
+    int peek() {
+    if (elements.empty()) {
+        std::cout << "Error: Stack is empty" << std::endl;
+        return -1;
+    }
+    return elements.back();
+}
+
 };
 
 int main() {
