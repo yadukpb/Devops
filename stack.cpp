@@ -1,5 +1,4 @@
 // Implementation of Stack code in cpp
-
 #include <iostream>
 #include <vector>
 
@@ -28,6 +27,12 @@ public:
     elements.pop_back();
     return top;
     }
+    //@Sithartha - Checking whether the stack is empty or not.
+    bool isEmpty() {
+        
+    return elements.empty();
+    }
+
 
     //@karan - reversing the stack elements
     void reverseStack(Stack &s) {
