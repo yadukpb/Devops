@@ -1,6 +1,10 @@
 // Implementation of Stack code in cpp
 #include <iostream>
 #include <vector>
+#include <stdexcept>
+#include <limits>
+#include <algorithm>
+
 
 class Stack {
 private:
@@ -54,6 +58,15 @@ public:
         std::cout << std::endl;
     }
 
+    //@lohith - Added a function that returns the min element of the stack
+    int getMin() {
+    if (elements.empty()) {
+        std::cout << "Error: Stack is empty" << std::endl;
+        return -1;
+    }
+    return *std::min_element(elements.begin(), elements.end());
+    }
+
 };
 
 int main() {
@@ -62,13 +75,15 @@ int main() {
     stack.push(10);
     stack.push(20);
     stack.push(30);
-    
+    std::cout << "Elements pushed to the stack: 10, 20, 30" << std::endl;
     stack.pop();
     
     stack.reverseStack(stack);
-    std::cout << "Elements pushed to the stack: 10, 20, 30" << std::endl;
 
     stack.print();
+    int x = stack.getMin();
+    std::cout << "minimum  element in the stack is: " << x << std::endl;
+
 
     return 0;
 }
