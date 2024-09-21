@@ -45,6 +45,15 @@ public:
     }
 }
 
+    // @maurya - Added function print()
+    void print() {
+        std::cout << "Stack: ";
+        for (int i = elements.size() - 1; i >= 0; i--) {
+            std::cout << elements[i] << " ";
+        }
+        std::cout << std::endl;
+    }
+
 };
 
 int main() {
@@ -58,6 +67,8 @@ int main() {
     
     stack.reverseStack(stack);
     std::cout << "Elements pushed to the stack: 10, 20, 30" << std::endl;
+
+    stack.print();
 
     return 0;
 }
