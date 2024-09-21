@@ -67,6 +67,11 @@ public:
     return *std::min_element(elements.begin(), elements.end());
     }
 
+    //@praneeth - Added a function that returns the size of the stack
+    int size() {
+    return elements.size();
+    }
+
 };
 
 int main() {
@@ -81,8 +86,12 @@ int main() {
     stack.reverseStack(stack);
 
     stack.print();
+    
     int x = stack.getMin();
     std::cout << "minimum  element in the stack is: " << x << std::endl;
+
+    x = stack.size();
+    std::cout << "size of the stack is: " << x << std::endl;
 
 
     return 0;
