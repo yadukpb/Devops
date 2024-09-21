@@ -24,6 +24,17 @@ public:
     return top;
     }
 
+    //@karan - reversing the stack elements
+    void reverseStack(Stack &s) {
+    Stack auxStack;
+    while (!s.isEmpty()) {
+        auxStack.push(s.pop());
+    }
+    while (!auxStack.isEmpty()) {
+        s.push(auxStack.pop());
+    }
+}
+
 };
 
 int main() {
@@ -34,8 +45,10 @@ int main() {
     stack.push(30);
     
     stack.pop();
-
+    
+    stack.reverseStack(stack);
     std::cout << "Elements pushed to the stack: 10, 20, 30" << std::endl;
 
     return 0;
 }
+
