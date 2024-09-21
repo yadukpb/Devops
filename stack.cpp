@@ -12,6 +12,18 @@ public:
     void push(int value) {
         elements.push_back(value);
     }
+    
+    //delete from stack : Added by adnan
+    int pop() {
+    if (elements.empty()) {
+        std::cout << "Error: Stack is empty" << std::endl;
+        return -1;
+    }
+    int top = elements.back();
+    elements.pop_back();
+    return top;
+    }
+
 };
 
 int main() {
@@ -20,6 +32,8 @@ int main() {
     stack.push(10);
     stack.push(20);
     stack.push(30);
+    
+    stack.pop();
 
     std::cout << "Elements pushed to the stack: 10, 20, 30" << std::endl;
 
