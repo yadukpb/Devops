@@ -20,7 +20,14 @@ public:
         return -1;
     }
     return elements.back();
-}
+    }
+
+    //delete from stack : Added by adnan
+    int pop() {
+    int top = elements.back();
+    elements.pop_back();
+    return top;
+    }
 
 };
 
@@ -30,6 +37,8 @@ int main() {
     stack.push(10);
     stack.push(20);
     stack.push(30);
+    
+    stack.pop();
 
     std::cout << "Elements pushed to the stack: 10, 20, 30" << std::endl;
 
