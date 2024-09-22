@@ -39,12 +39,12 @@ public:
 
     //@karan - reversing the stack elements
     void reverseStack(Stack &s) {
-        Stack auxStack;
+        std::vector<int> temp;
         while (!s.isEmpty()) {
-            auxStack.push(s.pop());
+            temp.push_back(s.pop());
         }
-        while (!auxStack.isEmpty()) {
-            s.push(auxStack.pop());
+        for (int value : temp) {
+            s.push(value);
         }
     }
 
@@ -73,13 +73,17 @@ public:
 
     //@shiraz - Added a function that searches for an element in a stack
     bool searchInStack(int target) {
-        while (!elements.empty()) {
-            if (elements.top() == target) {
+        for (int element : elements) {
+            if (element == target) {
                 return true; // Element found
             }
-            s.pop(); // Remove the top element
         }
         return false; // Element not found
+    }
+
+    // @uday - Added a function that clears the stack
+    void clear() {
+        elements.clear();
     }
 
 };
@@ -90,19 +94,37 @@ int main() {
     stack.push(10);
     stack.push(20);
     stack.push(30);
-    std::cout << "Elements pushed to the stack: 10, 20, 30" << std::endl;
-    stack.pop();
+    std::cout << "Stack after pushing 10, 20, 30 is: ";
+    stack.print();
+
+    int y = stack.peek();
+    std::cout << "Top element is: " << y << std::endl;
     
+    y = stack.pop();
+    std::cout << "Popped element is: " << y << std::endl;
+
+    bool m = stack.isEmpty();
+    std::cout << "Is stack empty? " << (m ? "True" : "False") << std::endl;
+
+    std::cout << "before Reversing";
+    stack.print();    
     stack.reverseStack(stack);
-    stack.searchInStack(20);
+    std::cout << "After Reversing";
     stack.print();
     
-    int x = stack.getMin();
-    std::cout << "minimum  element in the stack is: " << x << std::endl;
+    y = stack.getMin();
+    std::cout << "minimum  element in the stack is: " << y << std::endl;
 
-    x = stack.size();
-    std::cout << "size of the stack is: " << x << std::endl;
+    m = stack.searchInStack(20);
+    std::cout << "Is 20 present in the stack? " << (m ? "True" : "False") << std::endl;
 
+    y = stack.size();
+    std::cout << "size of the stack is: " << y << std::endl;
+
+    stack.clear();
+    std::cout << "Stack after clearing: ";
+    m = stack.isEmpty();
+    std::cout << "Is stack empty? " << (m ? "True" : "False") << std::endl;
 
     return 0;
 }
